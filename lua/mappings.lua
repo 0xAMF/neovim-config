@@ -23,6 +23,7 @@ map("n", "<leader>wj", "<C-w>j", { desc = "switch window right" })
 map("n", "<leader>wk", "<C-w>k", { desc = "switch window up" })
 map("n", "<leader>wl", "<C-w>l", { desc = "switch window down" })
 
+
 -- Reload configuration without restart nvim
 -- Or you don't want to use plenary.nvim, you can use this code
 -- function _G.reload_config()
@@ -70,11 +71,13 @@ map(
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP Diagnostic loclist" })
 
 -- Comment
-map("n", "mm", "gcc", { desc = "Toggle comment", remap = true })
-map("v", "mm", "gc", { desc = "Toggle comment", remap = true })
+map("n", "mm", "gcc", { desc = "Toggle comment", remap = true }) map("v", "mm", "gc", { desc = "Toggle comment", remap = true })
 
 -- Terminal
 map("n", "tt", function()
     local height = math.floor(vim.o.lines / 2)
     cmd("belowright split | resize " .. height .. " | terminal")
 end, { noremap = true, silent = true })
+
+
+map("i", "jk", "<Esc>", { desc = "Switch to normal mode" })
